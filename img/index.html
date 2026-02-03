@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Obligatorio 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <link rel="stylesheet" href="css/estilos.css">
+ 
+</head>
+
+<body>
+    <h1>Login</h1>
+
+
+    <section id="sectionInicio" class="seccion">
+        <h2>Login</h2>
+        <form id="formLogin">
+            <input type="text" placeholder="Nombre de usuario" id="userNameLogin" required value="user1"> <br>
+            <input type="text" placeholder="Contraseña" id="passLogin" required value="123"> <br>
+            <input type="button" value="Login" id="btnLogin">
+        </form>
+        <br> <br>
+        <!-- AGREGAR EL HTML PARA EL REGISTRO DE USUARIO -->
+        <h2>Registrarse</h2>
+        <form id="formRegistrar">
+            <input type="text" placeholder="Nombre" id="firstName" required> <br>
+            <input type="text" placeholder="Apellido" id="lastName" required> <br>
+            <input type="text" placeholder="Nombre de usuario" id="userName" required> <br>
+            <input type="text" placeholder="Contraseña" id="pass" required> <br>
+            <input type="button" value="Registrarse" id="btnRegistrar" required>
+        </form>
+    </section>
+
+    <section id="sectionCliente" class="seccion">
+        <h2>SECCION DEL CLIENTE</h2>
+        <input type="button" value="Logout" id="btnLogoutCliente">
+        <h2>Listado de conciertos</h2>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Nombre de evento</th>
+                    <th>Artista</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Logo</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCliente">
+            </tbody>
+        </table>
+
+        <hr>
+        <form id="formReservar">
+            <label for="selectConciertos">Concierto:</label>
+            <select id="selectConciertos"></select>
+            <input type="number" min="1" required id="cantEntradas" placeholder="Ingrese una cantidad">
+            <input type="button" value="Reservas" id="btnReservar">
+        </form>
+
+        <h3>Mis reservas</h3>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Cantidad</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tablaMisReservas"></tbody>
+        </table>
+
+
+    </section>
+
+
+    <section id="sectionAdmin" class="seccion">
+        <h2>SECCION ADMINISTRADOR</h2>
+        <input type="button" value="Logout" id="btnLogoutAdmin">
+        <h2>Registrar concierto</h2>
+        <hr>
+        <form id="formConciertos">
+            <label for="evento">Evento</label>
+            <input type="text" id="evento" placeholder="Ingresar evento...">
+            <br>
+            <label for="artista">Artista</label>
+            <input type="text" id="artista" placeholder="Ingresar artista...">
+            <br>
+            <label for="precio">Precio UY$</label>
+            <input type="number" id="precio" placeholder="Ingresar precio...">
+            <br>
+            <label for="descripcion">Descripción</label>
+            <input type="text" id="descripcion" placeholder="Ingresar descripción...">
+            <br>
+            <label for="logo">Logo</label>
+            <select id="logo">
+                <option value="img/AbelPintos.jpg">Abel Pintos</option>
+                <option value="img/Buitres.jpg">Buitres</option>
+                <option value="img/GerardoNieto.jpg">Gerardo Nieto</option>
+                <option value="img/Herederos.jpg">Herederos</option>
+                <option value="img/LarbanoisCarrero.jpg">Larbanois Carrero</option>
+                <option value="img/LaTrampa.jpg">La Trampa</option>
+                <option value="img/LaVelaPuerca.jpg">La Vela Puerca</option>
+                <option value="img/LosOlimarenos.jpg">Los Olimareños</option>
+                <option value="img/LucasSugo.jpg">Lucas Sugo</option>
+                <option value="img/Metallica.jpg">Metallica</option>
+                <option value="img/NTVG.jpg">NTVG</option>
+                <option value="img/TaylorSwift.jpg">Taylor Swift</option>
+            </select>
+            <img id="foto" src="img/AbelPintos.jpg" alt="artista">
+            <br>
+            <label for="cupos">Cupos</label>
+            <input type="number" id="cupos" placeholder="Ingresar cupos...">
+            <br>
+            <label for="oferta">Oferta</label>
+            <select id="oferta">
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+            <br>
+            <input type="button" id="btnRegistarConcierto" value="Registar concierto">
+        </form>
+
+        <h2>Listado de conciertos</h2>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de evento</th>
+                    <th>Artista</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Logo</th>
+                    <th>Cupos</th>
+                    <th>Oferta</th>
+                    <th>Marcar oferta</th>
+                    <th>Estado</th>
+                    <th>Activar/Desactivar</th>
+                </tr>
+            </thead>
+            <tbody id="tablaConciertos">
+            </tbody>
+        </table>
+
+        <h3>Reservas de clientes</h3>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>ID reserva</th>
+                    <th>Cliente</th>
+                    <th>Concierto</th>
+                    <th>Cantidad</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tablaAdminReservas"></tbody>
+        </table>
+
+        <h3>Procesar reservas</h3>
+        <button id="btnProcesar">Procesar reservas</button>
+
+        <h3>Modificar cupos de concierto</h3>
+        <form id="formCupos">
+            <label for="selectConciertoCupos">Seleccionar concierto:</label>
+            <select id="selectConciertoCupos"></select>
+            <input type="number" id="nuevoCupo" placeholder="Nuevo número de cupos" min="0">
+            <input type="button" value="Actualizar cupos" id="btnActualizarCupos">
+        </form>
+
+
+    </section>
+
+    <script src="js/clases.js"></script>
+    <script src="js/funciones.js"></script>
+</body>
+
+</html>

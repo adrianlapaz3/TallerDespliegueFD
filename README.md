@@ -138,7 +138,7 @@ Al iniciar la aplicación se cargan automáticamente:
 ## 🤖 Uso de Inteligencia Artificial
 
 Para la elaboración de este obligatorio se utilizó **Inteligencia Artificial Generativa (ChatGPT)** como herramienta de apoyo para:
-
+ 
 - Redacción de documentación (README)
 - Mejora de claridad en descripciones
 - Revisión general de la estructura del proyecto
